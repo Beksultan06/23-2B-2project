@@ -23,3 +23,16 @@ class Settings(models.Model):
 
     class Meta:
         verbose_name_plural = 'Настройка Главной Страницы'
+
+class Form(models.Model):
+    name = models.CharField(max_length=155)
+    info = models.CharField(max_length=255)
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Формула обраного'

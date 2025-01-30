@@ -836,51 +836,13 @@
             </div>
             <div class="row gy-40">
                 <div class="col-lg-8">
-                    <div class="contact-form-wrap">
+                    <div class="contact-form-wrap" style="background-color: aliceblue;">
                         <div class="section__title mb-30">
                             <h4 class="title text-white">WHAT CAN WE DO FOR YOU?</h4>
                         </div>
-                        <form action="mail.php" method="POST" class="contact__form ajax-contact">
-                            <div class="contact-form-check-wrap mb-60">
-                                <div class="form-check contact-form-check">
-                                    <input class="form-check-input" type="radio" name="contactRadio" id="contactRadio1" value="option1" checked>
-                                    <label class="form-check-label" for="contactRadio1">
-                                        Design
-                                    </label>
-                                </div>
-                                <div class="form-check contact-form-check">
-                                    <input class="form-check-input" type="radio" name="contactRadio" id="contactRadio2" value="option2">
-                                    <label class="form-check-label" for="contactRadio2">
-                                        Development
-                                    </label>
-                                </div>
-                                <div class="form-check contact-form-check">
-                                    <input class="form-check-input" type="radio" name="contactRadio" id="contactRadio3" value="option3">
-                                    <label class="form-check-label" for="contactRadio3">
-                                        Animation
-                                    </label>
-                                </div>
-                                <div class="form-check contact-form-check">
-                                    <input class="form-check-input" type="radio" name="contactRadio" id="contactRadio4" value="option4">
-                                    <label class="form-check-label" for="contactRadio4">
-                                        Other
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="row gy-30">
-                                <div class="col-md-6 form-group">
-                                    <label class="form-icon-right text-theme"><i class="far fa-user"></i></label>
-                                    <input type="text" class="form-control style-border2" name="name" id="name" placeholder="Your name">
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <label class="form-icon-right text-theme"><i class="far fa-envelope-open"></i></label>
-                                    <input type="text" class="form-control style-border2" name="website" id="email" placeholder="Info">
-                                </div>
-                                <div class="col-12 form-group">
-                                    <label class="form-icon-right text-theme"><i class="fas fa-pen"></i></label>
-                                    <textarea name="message" placeholder="Project details" id="contactForm" class="form-control style-border2"></textarea>
-                                </div>
-                            </div>
+                        <form method="POST" class="contact__form ajax-contact" style="color: azure;">
+                            {% csrf_token %}
+                            {{ form.as_p }}
                             <button type="submit" class="btn mt-60">
                                 Working with us <i class="fas fa-arrow-right"></i>
                                 <span class="line1"></span>
@@ -890,7 +852,6 @@
                             </button>
                         </form>
                     </div>
-                    
                 </div>
                 <div class="col-lg-4">
                     <div class="section__title mb-0 wow img-custom-anim-left">
